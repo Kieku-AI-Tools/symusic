@@ -26,22 +26,6 @@ __all__ = [
 
 _HERE = Path(__file__).parent
 _BIN = _HERE / "bin"
-# for win
-if os.name == "nt":
-    _MIDI2ABC = _BIN / "midi2abc.exe"
-    _ABC2MIDI = _BIN / "abc2midi.exe"
-# for linux
-else:
-    _MIDI2ABC = _BIN / "midi2abc"
-    _ABC2MIDI = _BIN / "abc2midi"
-
-if not _MIDI2ABC.exists():
-    raise FileNotFoundError(f"{_MIDI2ABC} does not exist")
-if not _ABC2MIDI.exists():
-    raise FileNotFoundError(f"{_ABC2MIDI} does not exist")
-# set env var SYMUSIC_MIDI2ABC
-os.environ["SYMUSIC_MIDI2ABC"] = str(_MIDI2ABC)
-os.environ["SYMUSIC_ABC2MIDI"] = str(_ABC2MIDI)
 
 """
 All the Factory classes are initialized when the module is imported.
