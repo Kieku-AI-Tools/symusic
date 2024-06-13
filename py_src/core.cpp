@@ -921,17 +921,17 @@ NB_MODULE(core, m) {
 
     auto tick = py::class_<Tick>(m, "Tick")
         .def(py::init<>())
-        .def("__repr__", [](const Tick &) { return "symsuic.core.Tick"; })
+        .def("__repr__", [](const Tick &) { return "symusic.core.Tick"; })
         .def("is_time_unit", [](const Tick &) { return true; });
 
     auto quarter = py::class_<Quarter>(m, "Quarter")
         .def(py::init<>())
-        .def("__repr__", [](const Quarter &) { return "symsuic.core.Quarter"; })
+        .def("__repr__", [](const Quarter &) { return "symusic.core.Quarter"; })
         .def("is_time_unit", [](const Quarter &) { return true; });
 
     auto second = py::class_<Second>(m, "Second")
         .def(py::init<>())
-        .def("__repr__", [](const Second &) { return "symsuic.core.Second"; })
+        .def("__repr__", [](const Second &) { return "symusic.core.Second"; })
         .def("is_time_unit", [](const Second &) { return true; });
 
     // def __eq__ for all time units
