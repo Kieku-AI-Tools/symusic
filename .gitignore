@@ -13,3 +13,4 @@
 **/*.so
 **/.vscode
 docs/book
+venv
