@@ -16,6 +16,20 @@
 #pragma warning(disable: 4996)
 
 namespace py = nanobind;
+
+template<typename T>
+void bind_note_class(py::module_ &m) {
+    py::class_<Note<T>>(m, "Note")
+        .def(py::init<>())
+        .def("get_pitch", &Note<T>::get_pitch)
+        .def("set_pitch", &Note<T>::set_pitch);
+}
+
+PYBIND11_MODULE(core, m) {
+    bind_note_class<Tick>(m);
+}
+
+/*
 namespace symusic {
 
 #define DECLARE_OBJ(__COUNT, NAME)          \
@@ -953,3 +967,4 @@ NB_MODULE(core, m) {
     core_module(m);
     bind_synthesizer(m);
 }
+*/
